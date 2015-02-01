@@ -1,7 +1,7 @@
 Summary: X.Org X11 DMX runtime library
 Name: libdmx
 Version: 1.1.2
-Release: 1
+Release: 2
 License: MIT
 Group: System Environment/Libraries
 URL: http://www.x.org
