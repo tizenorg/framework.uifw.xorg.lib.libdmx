@@ -1,7 +1,7 @@
 Summary: X.Org X11 DMX runtime library
 Name: libdmx
 Version: 1.1.2
-Release: 1
+Release: 2
 License: MIT
 Group: System Environment/Libraries
 URL: http://www.x.org
@@ -33,6 +33,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -49,7 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING ChangeLog
+/usr/share/license/%{name}
+#%doc COPYING ChangeLog
 %{_libdir}/libdmx.so.1
 %{_libdir}/libdmx.so.1.0.0
 
